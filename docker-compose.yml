@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    server:
+        image: gcr.io/seafile/jwt-server
+        ports:
+            - '4000:4000'
+        volumes:
+            - ${SERVER_CONFIG_PATH}:/config
+    frontend:
+        image: gcr.io/seafile/jwt-frontend
+        ports:
+            - '3000:5000'
